@@ -84,7 +84,7 @@ impl<'info> Swap<'info> {
 
         // 2. Amount that goes into the curve (after total fee)
         let amount_after_fee = (amount as u128)
-            .checked_mul((10_000 - self.config.fee as u128))
+            .checked_mul(10_000 - self.config.fee as u128)
             .ok_or(AmmError::CurveError)?
             .checked_div(10_000)
             .ok_or(AmmError::CurveError)? as u64;
