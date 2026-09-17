@@ -70,12 +70,14 @@ This program implements a Uniswap V2-style `x * y = k` liquidity pool with:
 
 ```bash
 anchor build
+```
 
 
 ### Test
 
 ```bash
 anchor test
+```
 
 ### Project Structure
 
