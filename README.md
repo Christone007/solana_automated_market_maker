@@ -81,6 +81,8 @@ anchor test
 
 ### Project Structure
 
+```
+
 programs/amm/
 ├── src/
 │   ├── instructions/
@@ -93,6 +95,7 @@ programs/amm/
 │   ├── error.rs
 │   └── lib.rs
 └── Cargo.toml
+```
 
 
 ### Tests
