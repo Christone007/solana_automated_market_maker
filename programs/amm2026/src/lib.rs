@@ -22,4 +22,12 @@ pub mod amm2026 {
     pub fn deposit(ctx: Context<Deposit>, amount: u64, max_x:u64, max_y: u64) -> Result<()> {
         handle_deposit(ctx, amount, max_x, max_y)
     }
+
+    pub fn swap(ctx: Context<Swap>, is_x: bool, amount: u64, min: u64) -> Result<()> {
+        handle_swap(ctx, is_x, amount, min)
+    }
+
+    pub fn collect_fees(ctx: Context<CollectFees>, amount_x: u64, amount_y: u64) -> Result<()> {
+        handle_collect_fees(ctx, amount_x, amount_y)
+    }
 }

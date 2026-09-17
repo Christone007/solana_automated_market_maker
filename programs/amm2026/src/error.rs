@@ -9,5 +9,7 @@ pub enum AmmError {
     #[msg("Slippage limits exceeded")]
     SlippageExceeded,
     #[msg("Curve Error")]
-    CurveError
+    CurveError,
+    #[msg("Invalid authority")]
+    InvalidAuthority,
 }
