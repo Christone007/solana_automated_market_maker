@@ -117,7 +117,7 @@ pub fn mint_lp_tokens (ctx: &Context<Deposit>, amount: u64) -> Result<()> {
     Ok(())
 }
 
-pub fn deposit(ctx:Context<Deposit>, amount:u64, max_x: u64, max_y: u64) -> Result<()> {
+pub fn handle_deposit(ctx:Context<Deposit>, amount:u64, max_x: u64, max_y: u64) -> Result<()> {
     require!(!ctx.accounts.config.locked, AmmError::PoolLocked);
     require_neq!(amount, 0, AmmError::InvalidAmount);
 
