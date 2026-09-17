@@ -140,13 +140,13 @@ pub fn handle_deposit(ctx:Context<Deposit>, amount:u64, max_x: u64, max_y: u64) 
     };
 
     // deposit x
-    let _ = deposit_tokens(&ctx,true, x);                                                                                      
+    deposit_tokens(&ctx,true, x)?;                                                                                      
 
     // deposit y
-    let _ = deposit_tokens(&ctx, false, y);    
+    deposit_tokens(&ctx, false, y)?;    
 
     // claim lp tokens
-    let _ = mint_lp_tokens(&ctx, amount);
+    mint_lp_tokens(&ctx, amount)?;
 
     Ok(())
 }

@@ -7,5 +7,7 @@ pub enum AmmError {
     #[msg("Invalid amount")]
     InvalidAmount,
     #[msg("Slippage limits exceeded")]
-    SlippageExceeded
+    SlippageExceeded,
+    #[msg("Curve Error")]
+    CurveError
 }
