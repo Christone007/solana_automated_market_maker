@@ -90,7 +90,7 @@ pub fn deposit_tokens(ctx: &Context<Deposit>, is_x: bool, amount: u64) -> Result
 
     let cpi_context = CpiContext::new(cpi_program, cpi_accounts);
 
-    transfer(cpi_context, amount);
+    let _ = transfer(cpi_context, amount);
 
     Ok(())
 }
@@ -112,7 +112,7 @@ pub fn mint_lp_tokens (ctx: &Context<Deposit>, amount: u64) -> Result<()> {
 
     let cpi_ctx = CpiContext::new_with_signer(cpi_program, cpi_accounts, signer_seeds);
     
-    mint_to(cpi_ctx, amount);
+    let _ = mint_to(cpi_ctx, amount);
 
     Ok(())
 }
@@ -140,13 +140,13 @@ pub fn handle_deposit(ctx:Context<Deposit>, amount:u64, max_x: u64, max_y: u64) 
     };
 
     // deposit x
-    deposit_tokens(&ctx,true, x);                                                                                      
+    let _ = deposit_tokens(&ctx,true, x);                                                                                      
 
     // deposit y
-    deposit_tokens(&ctx, false, y);    
+    let _ = deposit_tokens(&ctx, false, y);    
 
     // claim lp tokens
-    mint_lp_tokens(&ctx, amount);
+    let _ = mint_lp_tokens(&ctx, amount);
 
     Ok(())
 }
